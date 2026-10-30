@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source time_function.sh
+source $HOME/projects/k8s-failure-reproduction/logging/bin/time_function.sh
 
 fn=start_end_time.txt
 
