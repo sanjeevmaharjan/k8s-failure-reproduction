@@ -3,8 +3,10 @@ import time
 import signal
 import subprocess
 
+home_dir = os.environ.get("HOME")
+
 if __name__ == "__main__":
-    log_dir="/home/gangmuk2/projects/k8s-failure-reproduction/logging"
+    log_dir = home_dir + "/projects/k8s-failure-reproduction/logging"
     node_list = ["kind-control-plane", "kind-worker", "kind-worker2", "kind-worker3"]
     log_kubelet = log_dir + "/bin/log_kubelet_worker.sh"
     log_kubelet_process = list()

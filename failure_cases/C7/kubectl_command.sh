@@ -2,7 +2,7 @@
 
 start_time=$(date +%s)
 
-source /home/gangmuk2/projects/k8s-failure-reproduction/logging/bin/time_function.sh
+source $HOME/projects/k8s-failure-reproduction/logging/bin/time_function.sh
 
 update_time
 fn=${CDT}-command-D1.log.csv
@@ -10,10 +10,10 @@ fn=${CDT}-command-D1.log.csv
 echo "command,keyword,start_cdt,start_utc,end_cdt,end_utc" >> ${fn}
 
 update_time
-echo -n "python3 /home/gangmuk2/projects/k8s-failure-reproduction/logging/logging_start
+echo -n "python3 $HOME/projects/k8s-failure-reproduction/logging/logging_start
 .py,start logging,${CDT},${UTC}," >> ${fn}
 echo "logging start"
-python3 /home/gangmuk2/projects/k8s-failure-reproduction/logging/logging_start.py &
+python3 $HOME/projects/k8s-failure-reproduction/logging/logging_start.py &
 
 update_time
 echo "${CDT},${UTC}" >> ${fn}
@@ -45,8 +45,8 @@ echo "${CDT},${UTC}" >> ${fn}
 sleep 5
 
 update_time
-echo -n "python3 /home/gangmuk2/projects/k8s-failure-reproduction/logging/logging_end.py,end logging,${CDT},${UTC}," >> ${fn}
-python3 /home/gangmuk2/projects/k8s-failure-reproduction/logging/logging_end.py
+echo -n "python3 $HOME/projects/k8s-failure-reproduction/logging/logging_end.py,end logging,${CDT},${UTC}," >> ${fn}
+python3 $HOME/projects/k8s-failure-reproduction/logging/logging_end.py
 
 update_time
 echo -n "kubectl delete deploy/php-apache,${CDT},${UTC}," >> ${fn}

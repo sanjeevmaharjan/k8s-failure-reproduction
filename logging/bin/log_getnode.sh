@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#source /home/gangmuk2/projects/k8s-failure-reproduction/logging/bin/time_function.sh
+#source $HOME/projects/k8s-failure-reproduction/logging/bin/time_function.sh
 source time_function.sh
 
 #CURRENT_TIME=`date +"%Y%m%d_%H%M%S"`

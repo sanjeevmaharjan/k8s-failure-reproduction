@@ -1,11 +1,14 @@
 import time
+import os
 import subprocess
+
+home_dir = os.environ.get("HOME")
 
 def print_exec_log(log):
     print("[logging_start.py],start,{}".format(log))
 
 if __name__ == "__main__":
-    log_dir="/home/gangmuk2/projects/k8s-failure-reproduction/logging"
+    log_dir = home_dir + "/projects/k8s-failure-reproduction/logging"
     clear_kubelet_log = log_dir + "/bin/clear_kubelet_worker_log.sh" # clear up the past kubelet log in each node before start
     clear_scheduler_log = log_dir + "/bin/clear_scheduler_log.sh" # clear up the past scheduler log in control-plane-node before start
 
